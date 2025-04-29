@@ -1,0 +1,98 @@
+{
+  "topics": [
+    {
+      "name": "Math",
+      "questions": [
+        {
+          "q": "What is the derivative of sin(x)?",
+          "a": "cos(x)",
+          "history": [
+            {
+              "status": "wrong",
+              "date": "2025-04-16T15:53:13.519385Z"
+            },
+            {
+              "status": "correct",
+              "date": "2025-04-23T15:53:13.519420Z"
+            }
+          ]
+        },
+        {
+          "q": "State the Pythagorean theorem.",
+          "a": "a\u00b2 + b\u00b2 = c\u00b2 for the sides of a right triangle.",
+          "history": [
+            {
+              "status": "partial",
+              "date": "2025-04-20T15:53:13.519427Z"
+            },
+            {
+              "status": "correct",
+              "date": "2025-04-24T15:53:13.519431Z"
+            },
+            {
+              "status": "correct",
+              "date": "2025-03-31T15:53:13.519436Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "questions": [
+        {
+          "q": "Who was the first President of the United States?",
+          "a": "George Washington",
+          "history": [
+            {
+              "status": "correct",
+              "date": "2025-04-11T15:53:13.519442Z"
+            }
+          ]
+        },
+        {
+          "q": "In which year did World War II end?",
+          "a": "1945",
+          "history": [
+            {
+              "status": "wrong",
+              "date": "2025-04-29T15:53:13.519447Z"
+            },
+            {
+              "status": "partial",
+              "date": "2025-04-13T15:53:13.519453Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "questions": [
+        {
+          "q": "Explain what 'hoisting' means.",
+          "a": "Variables and function declarations are moved to the top of their scope before code execution.",
+          "history": [
+            {
+              "status": "wrong",
+              "date": "2025-03-30T15:53:13.519464Z"
+            },
+            {
+              "status": "wrong",
+              "date": "2025-04-20T15:53:13.519470Z"
+            },
+            {
+              "status": "partial",
+              "date": "2025-04-07T15:53:13.519474Z"
+            }
+          ]
+        },
+        {
+          "q": "What does `Array.prototype.map` do?",
+          "a": "Returns a new array with the results of calling a provided function on every element.",
+          "history": []
+        }
+      ]
+    }
+  ]
+}

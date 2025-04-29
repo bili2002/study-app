@@ -1,0 +1,187 @@
+/* ===== palette ===== */
+:root {
+  --never:   #f0f0f0;
+  --read:    #ccefff;
+  --correct: #ccffcc;
+  --partial: #ffffcc;
+  --wrong:   #ffcccc;
+
+  /* gets overridden per card by JS */
+  --grade-color: transparent;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 20px;
+  background: #fafafa;
+  color: #111;
+}
+
+#controls { margin-bottom: 1rem; }
+
+/* ===== card / box ===== */
+.topic-box,
+.question-box {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: var(--grade-color, #fff);
+  transition: background-color .25s ease;
+}
+
+/* ===== topic ===== */
+.topic-header {
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+}
+
+.topic-body { margin-top: 8px; padding-left: 10px; }
+
+/* ===== question ===== */
+.question-row {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.answer-area { margin-top: 6px; padding-left: 10px; }
+
+/* ===== buttons ===== */
+button {
+  appearance: none;
+  border: 1px solid #bbb;
+  background: #eee;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: .9rem;
+  transition: background .15s ease, transform .1s ease;
+}
+button:hover  { background: #e0e0e0; }
+button:active { transform: translateY(1px); }
+
+.answer-area button {
+  border: none;
+  color: #222;
+}
+
+
+/* generic space & reset — affects Edit/Save + Show Answer too */
+.answer-area button,
+.question-row button {
+  background: #eee;
+  border: 1px solid #bbb;
+}
+
+/* colour only the result buttons we’ll tag with a class in JS */
+.status-btn      { border: none; }          /* remove border */
+
+.question-row button,
+.answer-area button {
+  background: #eee;
+  border: 1px solid #bbb;
+  margin-right: 8px;   /* ← breathing room */
+  margin-bottom: 6px;  /* stack nicely when they wrap */
+}
+
+.answer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+textarea         { width: 100%; min-height: 70px; margin-bottom: 12px; }
+.answer-text     { flex: 1 1 auto; margin-bottom: 12px; }
+
+.edit-btn { margin-left: auto; }
+
+.summary-row {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 4px;      
+}
+
+.summary-row,
+.topic-header.summary-mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grade-pct {
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+#mode-switch {
+  display: inline-flex;
+  gap: .5rem;
+  margin-right: 1rem;
+}
+.mode-btn {
+  background: #eee;
+  border: 1px solid #bbb;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: .9rem;
+  transition: background .2s ease, transform .1s ease;
+}
+.mode-btn:hover   { background: #e0e0e0; }
+.mode-btn:active  { transform: translateY(1px); }
+
+/* highlight the current mode */
+.mode-btn.active {
+  background: #333;
+  color: #fff;
+}
+
+/* === import / export ================================ */
+#controls button:not(.mode-btn) {
+  background: #4a90e2;
+  border: none;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: background .2s ease, transform .1s ease;
+}
+#controls button:not(.mode-btn):hover  { background: #3c7ac1; }
+#controls button:not(.mode-btn):active { transform: translateY(1px); }
+/* controls bar */
+#controls {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+
+/* file buttons live on the right */
+#file-buttons {
+  margin-left: auto;        /* pushes them flush-right */
+  display: flex;
+  gap: .5rem;
+}
+
+/* reuse the blue pill style we already made */
+#file-buttons button {
+  background: #4a90e2;
+  border: none;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: background .2s ease, transform .1s ease;
+}
+#file-buttons button:hover  { background: #3c7ac1; }
+#file-buttons button:active { transform: translateY(1px); }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="controls">
+      <div id="mode-switch">
+        <button class="mode-btn active"    data-mode="hard">Study</button>
+        <button class="mode-btn"           data-mode="study">Study All</button>
+        <button class="mode-btn"           data-mode="summary">Summary</button>
+      </div>
+  
+      <div id="file-buttons">
+        <button id="import-btn">Import</button>
+        <button id="export-btn">Export</button>
+      </div>
+    </div>
+
+  <div id="topics-container"></div>
+
+  <!-- the import file input lives in the shadow realm -->
+  <input id="import-file" type="file" accept=".json" hidden />
+
+  <script type="module" src="scripts/ui.js"></script>
+</body>
+</html>
