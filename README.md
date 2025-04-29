@@ -9,7 +9,7 @@ This website can help you keep progress of you studies. You can have multiple to
 
 - Study All	- Every question in every topic—good for cramming.
 
-- Summary	A - pastel heat-map of grades; click a topic to drill in.
+- Summary - A heat-map of grades; click a topic to drill in.
   
 ![image](https://github.com/user-attachments/assets/8681b69b-cf2d-468d-beae-c06cfef42647)
 
