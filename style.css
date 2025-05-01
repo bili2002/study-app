@@ -185,3 +185,7 @@ textarea         { width: 100%; min-height: 70px; margin-bottom: 12px; }
 }
 #file-buttons button:hover  { background: #3c7ac1; }
 #file-buttons button:active { transform: translateY(1px); }
+
+.answer-text {
+  white-space: pre-wrap;   /* preserve \n and still wrap long lines */
+}

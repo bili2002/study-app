@@ -4,6 +4,8 @@ import { questionGrade, topicGrade, gradientColor } from './grading.js';
 let data  = loadData();
 let mode  = 'hard';
 
+const openTopics = new Set();   // names (or IDs) of expanded topics
+
 /* ---------- bootstrap ---------- */
 function init() {
   // export
@@ -41,6 +43,8 @@ function saveAndRender() {
 /* ---------- render ---------- */
 function render() {
   renderTopics();
+
+  if (window.MathJax) MathJax.typesetPromise();
 }
 
 function renderTopics() {
@@ -54,7 +58,9 @@ function renderTopics() {
     const box = document.createElement('div');
     box.className = 'topic-box';
     if (mode === 'summary') {
-      box.style.setProperty('--grade-color', gradientColor(tGrade));
+          '--grade-color',
+          nowOpen ? '#fff'
+                  : gradientColor(tGrade)
     }
 
     /* --- header --- */
@@ -84,12 +90,16 @@ function renderTopics() {
                 nowOpen ? '#fff' : gradientColor(tGrade)
             );
         }
+
+        if (nowOpen)  openTopics.add(topic.name);
+        else          openTopics.delete(topic.name);
     };
 
     /* --- body (collapsible) --- */
     const body = document.createElement('div');
     body.className = 'topic-body';
-    body.style.display = 'none';
+    body.style.display = openTopics.has(topic.name) ? 'block' : 'none';
+
 
     topic.questions.forEach(q => renderQuestion(q, mode, body));
 
@@ -175,9 +185,14 @@ function setupAnswerUI(q, area) {
   header.append(ansText, editBtn);
   area.append(header, textarea);
 
+  if (!q.a) {
+    textarea.style.display = 'block';
+    ansText.style.display  = 'none';
+  }
+
   editBtn.onclick = () => {
     // entering edit mode
-    if (!q.a || textarea.style.display !== 'block') {
+    if (textarea.style.display !== 'block') {
       textarea.style.display = 'block';
       ansText.style.display  = 'none';
       editBtn.textContent    = 'Save Answer';
